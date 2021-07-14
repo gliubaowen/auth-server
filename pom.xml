@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.lbw</groupId>
-	<artifactId>sso-server</artifactId>
+	<artifactId>auth-server</artifactId>
 	<version>0.0.3</version>
-	<name>sso-server</name>
+	<name>auth-server</name>
 	<description>sso-server project for Spring Boot</description>
 
 	<properties>
