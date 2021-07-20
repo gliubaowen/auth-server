@@ -22,8 +22,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	/**
 	 * 密码加密
 	 *
-	 * @return
-	 * @author LiuBaoWen
 	 */
 	@Bean
 	public PasswordEncoder passwordEncoder() {

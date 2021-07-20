@@ -6,12 +6,15 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.ComponentScan;
 
+import com.spring4all.swagger.EnableSwagger2Doc;
+
 /**
  * 启动类
  * 
  * @author LiuBaoWen
  *
  */
+@EnableSwagger2Doc
 @SpringBootApplication
 @ComponentScan(basePackages = { "com.lbw.auth.server" })
 public class AuthServerApplication {
