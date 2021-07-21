@@ -28,7 +28,7 @@ import lombok.extern.slf4j.Slf4j;
 @Slf4j
 @Api(value = "认证", tags = "认证")
 @RestController
-@RequestMapping("service")
+//@RequestMapping("service")
 public class AuthServerController {
 
 	@ApiOperation(value = "获取当前用户")
