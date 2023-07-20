@@ -20,14 +20,16 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	/**
-	 * 密码加密
-	 *
+	 * 密码管理器
 	 */
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
 	}
 
+	/**
+	 * 注入 AuthenticationManager,认证处理四种授权方式
+	 */
 	@Bean
 	@Override
 	public AuthenticationManager authenticationManagerBean() throws Exception {
@@ -36,7 +38,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(HttpSecurity http) throws Exception {
-		http.csrf().disable().authorizeRequests().antMatchers("/oauth/**", "/login/**", "/logout/**").permitAll()
-				.anyRequest().authenticated().and().formLogin().permitAll();
+		http.csrf().disable().authorizeRequests().antMatchers("/login/**", "/logout/**").permitAll().anyRequest()
+				.authenticated().and().formLogin().permitAll();
 	}
 }

@@ -30,9 +30,10 @@ import org.springframework.security.oauth2.provider.token.store.JdbcTokenStore;
 @EnableAuthorizationServer
 public class AuthorizationServiceConfig extends AuthorizationServerConfigurerAdapter {
 
+	/** 认证管理器 */
 	@Autowired
 	private AuthenticationManager authenticationManager;
-	/** 密码加密 */
+	/** 密码管理器 */
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	/** 用户信息服务 */
@@ -73,7 +74,8 @@ public class AuthorizationServiceConfig extends AuthorizationServerConfigurerAda
 				.refreshTokenValiditySeconds(864000)// 配置刷新token的有效期
 				.redirectUris("http://localhost/auth-client/login")// 配置redirect_uri，用于授权成功后跳转
 				.scopes("all")// 配置申请的权限范围
-				.authorizedGrantTypes("authorization_code", "password");// 配置grant_type，表示授权类型
+				.authorizedGrantTypes("authorization_code", "password", "client_credentials", "refresh_token",
+						"implicit");// 配置grant_type，表示授权类型
 	}
 
 }
